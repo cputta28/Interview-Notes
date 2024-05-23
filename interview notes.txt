@@ -1,0 +1,109 @@
+Java Interview Q&A :-
+------------------
+1) what is the piller of oops concept?
+A) -> Encapslution
+   ->Abstruction
+   ->Inheritence
+   ->Polymorphism
+
+2) Where did you use this oops concepts in your project ?
+A) >Encapslution: Entity class
+   >Inheritence : Repository interface
+   >Polymorphism: Service interface and Impl class
+   >Abstruction : Service interface
+   
+   
+3) Explain Exception hierarchy    ?
+                     Object
+					   |
+					Throwable
+                    _______!______
+                    |			 |	
+				Exception	     Error ---
+				  |                       |->StackOverFlow
+			|-------------|
+			Checked		Unchecked
+
+4) can we override static and private method?
+A):-no we can not override static and private methods
+
+5) what is the difference of java 7 and java 8 interface ?
+A) Default and Static methods
+   
+6) Wthat i s final,finally,finalize?
+A)  Final: keyword 
+    Finally: Block
+	Finalize: Object class method
+
+﻿
+
+7) What is equals and hashcode method and its contract?
+A)
+Hashcode: used to generate unique or reference number of an object 
+          through which we can easily identify uniqueness of an object
+Equals: used to compare object based on its content	
+
+8)what is exception?
+A) when unwantedand unexpected situation occur in program is called exception
+-> to achieve graceful termination we can handle exception
+
+9)throw and throws exception?
+A) throw: it is ignore checked exceptions
+   throws: create exception
+
+10) is finally always excute?
+A) yes, finally block can always excute 
+	
+11) how many ways we can create String objects?
+A) in two ways we can create String objects
+  1:- literally  - one object will  create and store in scp
+            ex-> String str="Rama"; 
+    
+  2:- using new keyword    - two objects wil create stores 1 in heap and 1 in scp
+	             ex-> String str=new String("Rama"); 
+				 
+12)what is scp and how it works?
+A)  scp stands for String constent pool  and it will not allow duplicate objects	
+
+13) why String is immutable?
+A)  immutable means unmodifiable and unchangeble 
+  -> once we assign value to the variable then we can't modify that content 	
+﻿
+ ﻿
+ 14) how to create your costom immutable class?
+ A) > to make our class as final
+    > to declare our instance variables as final and private
+	> dont add setter methods
+	> initialize all variables in constructor
+	
+	
+﻿
+
+15)Which one is good to store password in java String or char[] & Why
+A)Here are a few reasons which make sense to believe that character array is a 
+better choice for storing the password in Java than String
+
+>Since Strings are immutable in Java if you storethe password as plain text it will be 
+available in memory until the Garbage collector clears it and also String literal is stored
+ String pool for reusability there is a pretty high chance that it will remain in memory for long duration.
+ 
+>Because its difficult to destroy literal from SCP as GC unable to perform cleanup activity
+ in SCP only it will destroy once jvm restarted so which may leads a high security threat.
+ 
+> Since anyone who has access to memory dump can find the password in clear text 
+and that's another reason you should always use an encrypted password than plain text	
+	
+	ex:-
+	﻿
+String strPassword-"Unknown";
+char[] charPassword- new char[]('U', 'n', 'k', '', 'o', 'n');
+ System.out.println("String password: + strPassword);
+ System.out.println("Character password:
+ 
+ 
+String password: Unknown
+Character password: [C@110b053 
+
+16) what is Marker Interface(tagging)? Can we create our own marker Interface?
+A) the interface which does contain any method is called as marker Interface.
+ > yes, we can create our own marker interface but it is not use because java does not know about our interface. 
